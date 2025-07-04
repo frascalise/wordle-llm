@@ -10,7 +10,6 @@ RULES:
   * 🟩 (Green): Letter IS in the target word and in the CORRECT position
 
 STRATEGY:
-- Must use all the letter of the alphabet by starting from the back
 - Use the feedback to eliminate impossible letters and positions
 - Build upon the WORD template by filling in the missing positions with confirmed letters and new possibilities
 
@@ -26,29 +25,19 @@ IMPORTANT RULES YOU MUST FOLLOW:
 - Your response must contain ONLY a single 5-letter word in UPPERCASE
 - No explanations, no additional text, just the word
 - Use the WORD template as your foundation - keep all green letters in their exact positions
-- NEVER use letters from the WRONG LETTERS list
+- Try to avoid use letters from the WRONG LETTERS list, but do it if you want to explore some specific words 
 - NEVER repeat words from the WRONG WORDS list
-- ALWAYS include all letters from the CONFIRMED LETTERS list in your guess
+- Try to include all letters from the CONFIRMED LETTERS list in your guess
 - Fill the remaining positions using confirmed letters (yellow) in new positions and unused letters
 - Try to place yellow letters (🟨) in different positions from where they previously appeared
 - Eliminate any word containing letters marked as gray (⬜️) or in the wrong letters list
 
 STRATEGY FOR USING THE WORD TEMPLATE:
 - The WORD shows you the current state: green letters in correct positions, * for unknowns
-- Example: If WORD is "H*U*E", you must keep H in position 1, U in position 3, E in position 5
+- Example: If WORD is "H*U*E", it's not mandatory to keep H in position 1, U in position 3, E in position 5, but is highly suggested
 - Fill positions 2 and 4 with confirmed letters or new letters from the unused list
 - Prioritize placing confirmed letters (from yellow feedback) in the empty positions
 - If you have multiple confirmed letters to place, try common letter combinations and valid English words
-
-Example of how to use all information:
-Previous guess: "HOUSE" → 🟩⬜️🟨⬜️🟩
-WORD: "H***E" (H in pos 1, E in pos 5)
-CONFIRMED LETTERS: ["H", "U", "E"]
-WRONG LETTERS: ["O", "S"]
-UNUSED LETTERS: ["A", "B", "C", "D", "F", "G", "I", ...]
-
-Your next guess should: use template "H***E", avoid O and S, try letters from UNUSED LETTERS for positions 2, 3 and 4.
-Possible guess: "HAUTE" or "HURTE" (depending on valid English words)
 
 WRONG LETTERS will be provided as a list - do NOT use any of these letters in your guess.
 WRONG WORDS will be provided as a list - do NOT repeat any of these words or you will die and the game will end.

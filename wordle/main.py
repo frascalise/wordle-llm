@@ -1,10 +1,11 @@
 import requests
 import json
+from ollama import chat
 
 # Wordle API URL
 URL = "https://wordle-api.vercel.app/api/wordle"
 
-# ollama API URL for Llama 3
+# ollama API URL for LLM
 LLAMA3_URL = "http://localhost:11434/api/chat"
 
 INSTRUCTIONS = open("wordle/instructions.txt", "r").read()
@@ -15,28 +16,31 @@ CONFIRMED_LETTERS = []
 UNUSED_LETTERS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
                  "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-def ask_llama3(history):
-    data = {
-        "model": "llama3",
-        "messages": [
-            {
-                "role": "user",
-                "content": history,
+def ask_llm(history):
 
+    response = chat(
+        model='deepseek-r1',
+        messages=[
+            {
+                'role': 'user',
+                'content': history
             }
         ],
-        "options": {
-            "temperature": 0.2,
-        },
-        "stream": False,
-    }
+        stream=True
+    )
 
-    headers = {
-        "Content-Type": "application/json"
-    }
+    full_content = ""
+    print("🤖 DeepSeek-R1 sta ragionando...")
+    print("=" * 60)
+    
+    for chunk in response:
+        if chunk.message.content:
+            print(chunk.message.content, end='', flush=True)
+            full_content += chunk.message.content
+    
+    print("\n" + "=" * 60)
+    return full_content
 
-    response = requests.post(LLAMA3_URL, headers=headers, json=data)
-    return response.json()["message"]["content"]
 
 
 def printGuess(character_info):
@@ -58,13 +62,13 @@ def printGuess(character_info):
             else:
                 results += "🟨"
                 if char["char"].upper() not in CONFIRMED_LETTERS:
-                    WRONG_LETTERS.append(char["char"].upper())
+                    CONFIRMED_LETTERS.append(char["char"].upper())
         index += 1
 
     return results
 
 
-def guess_wordle(guess, history):
+def guess_wordle(guess):
     llmGuess = {"guess": guess}
     response = requests.post(URL, llmGuess)
     json_response = json.loads(response.content.decode('utf-8'))
@@ -87,7 +91,8 @@ if __name__ == "__main__":
         prompt =    INSTRUCTIONS + history + f"\nDON'T USE THESE WRONG LETTERS: {WRONG_LETTERS}" \
                     + f"\nDON'T USE THESE WRONG WORDS: {WRONG_WORDS}" + f"\nUSE THESE UNUSED LETTERS: {UNUSED_LETTERS}" \
                     + f"\n USE THESE CONFIRMED LETTERS: {CONFIRMED_LETTERS}" + f"\nWORD: {WORD}"
-        guess = ask_llama3(prompt)
-        guessed, result = guess_wordle(guess, history)
+        guess = ask_llm(prompt)[-5:]
+        print(f"Guessing: {guess}")
+        guessed, result = guess_wordle(guess)
         history += f"\n{guess} -> {result}"
         print(f"{guess} -> {result}")
