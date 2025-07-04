@@ -30,7 +30,7 @@ def ask_llm(history):
     )
 
     full_content = ""
-    print("🤖 DeepSeek-R1 sta ragionando...")
+    print("🤖 DeepSeek-R1 is 'thinking'...")
     print("=" * 60)
     
     for chunk in response:
