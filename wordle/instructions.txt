@@ -1,0 +1,59 @@
+INSTRUCTIONS:
+You are playing Wordle, a word guessing game. Your goal is to guess a 5-letter English word.
+
+RULES:
+- You have 6 attempts to guess the correct word
+- Each guess must be a valid 5-letter English word
+- After each guess, you'll receive feedback using colored squares:
+  * ⬜️ (Gray): Letter is NOT in the target word
+  * 🟨 (Yellow): Letter IS in the target word but in the WRONG position
+  * 🟩 (Green): Letter IS in the target word and in the CORRECT position
+
+STRATEGY:
+- Must use all the letter of the alphabet by starting from the back
+- Use the feedback to eliminate impossible letters and positions
+- Build upon the WORD template by filling in the missing positions with confirmed letters and new possibilities
+
+INFORMATION PROVIDED:
+- You will see your previous guesses with their feedback patterns
+- You will receive a list of WRONG LETTERS that are confirmed NOT to be in the target word
+- You will receive a list of WRONG WORDS that you have already guessed incorrectly
+- You will receive a list of UNUSED LETTERS that you haven't tried yet
+- You will receive a list of CONFIRMED LETTERS that are present in the target word (from yellow/green feedback)
+- You will receive the current WORD template showing green letters in their correct positions (using _ for unknown positions)
+
+IMPORTANT RULES YOU MUST FOLLOW:
+- Your response must contain ONLY a single 5-letter word in UPPERCASE
+- No explanations, no additional text, just the word
+- Use the WORD template as your foundation - keep all green letters in their exact positions
+- NEVER use letters from the WRONG LETTERS list
+- NEVER repeat words from the WRONG WORDS list
+- ALWAYS include all letters from the CONFIRMED LETTERS list in your guess
+- Fill the remaining positions using confirmed letters (yellow) in new positions and unused letters
+- Try to place yellow letters (🟨) in different positions from where they previously appeared
+- Eliminate any word containing letters marked as gray (⬜️) or in the wrong letters list
+
+STRATEGY FOR USING THE WORD TEMPLATE:
+- The WORD shows you the current state: green letters in correct positions, _ for unknowns
+- Example: If WORD is "H_U_E", you must keep H in position 1, U in position 3, E in position 5
+- Fill positions 2 and 4 with confirmed letters or new letters from the unused list
+- Prioritize placing confirmed letters (from yellow feedback) in the empty positions
+- If you have multiple confirmed letters to place, try common letter combinations and valid English words
+
+Example of how to use all information:
+Previous guess: "HOUSE" → 🟩⬜️🟨⬜️🟩
+WORD: "H***E" (H in pos 1, E in pos 5)
+CONFIRMED LETTERS: ["H", "U", "E"]
+WRONG LETTERS: ["O", "S"]
+UNUSED LETTERS: ["A", "B", "C", "D", "F", "G", "I", ...]
+
+Your next guess should: Use template "H_U_E", avoid O and S, try letters like A, I, T, R, N for positions 2 and 4.
+Possible guess: "HAUTE" or "HURTE" (depending on valid English words)
+
+WRONG LETTERS will be provided as a list - do NOT use any of these letters in your guess.
+WRONG WORDS will be provided as a list - do NOT repeat any of these words or you will die and the game will end.
+UNUSED LETTERS will be provided as a list - consider using these to explore new possibilities.
+CONFIRMED LETTERS will be provided as a list - MUST include ALL of these in your guess.
+WORD will show the current template with green letters in correct positions - USE THIS AS YOUR BASE.
+
+YOUR GUESSES:
