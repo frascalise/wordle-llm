@@ -20,7 +20,7 @@ INFORMATION PROVIDED:
 - You will receive a list of WRONG WORDS that you have already guessed incorrectly
 - You will receive a list of UNUSED LETTERS that you haven't tried yet
 - You will receive a list of CONFIRMED LETTERS that are present in the target word (from yellow/green feedback)
-- You will receive the current WORD template showing green letters in their correct positions (using _ for unknown positions)
+- You will receive the current WORD template showing green letters in their correct positions (using * for unknown positions)
 
 IMPORTANT RULES YOU MUST FOLLOW:
 - Your response must contain ONLY a single 5-letter word in UPPERCASE
@@ -34,8 +34,8 @@ IMPORTANT RULES YOU MUST FOLLOW:
 - Eliminate any word containing letters marked as gray (⬜️) or in the wrong letters list
 
 STRATEGY FOR USING THE WORD TEMPLATE:
-- The WORD shows you the current state: green letters in correct positions, _ for unknowns
-- Example: If WORD is "H_U_E", you must keep H in position 1, U in position 3, E in position 5
+- The WORD shows you the current state: green letters in correct positions, * for unknowns
+- Example: If WORD is "H*U*E", you must keep H in position 1, U in position 3, E in position 5
 - Fill positions 2 and 4 with confirmed letters or new letters from the unused list
 - Prioritize placing confirmed letters (from yellow feedback) in the empty positions
 - If you have multiple confirmed letters to place, try common letter combinations and valid English words
@@ -47,7 +47,7 @@ CONFIRMED LETTERS: ["H", "U", "E"]
 WRONG LETTERS: ["O", "S"]
 UNUSED LETTERS: ["A", "B", "C", "D", "F", "G", "I", ...]
 
-Your next guess should: Use template "H_U_E", avoid O and S, try letters like A, I, T, R, N for positions 2 and 4.
+Your next guess should: Use template "H***E", avoid O and S, try letters like A, I, T, R, N for positions 2, 3 and 4.
 Possible guess: "HAUTE" or "HURTE" (depending on valid English words)
 
 WRONG LETTERS will be provided as a list - do NOT use any of these letters in your guess.
