@@ -16,13 +16,13 @@ The primary goal of this project is to explore the capabilities of LLMs in a fun
 
 *(This section can be updated as the project progresses and more data is collected.)*
 
-# llama3:8b
+### llama3:8b
 
 * llama3:8b refuses to use some rarely used letters.
 * llama3:8b gets stuck repeating the same words even though explicitly asked not to.
 * After a certain number of attempts llama3:8b "forgets" to respond with only one word as explicitly requested.
 
-# deepseek-r1:8b
+### deepseek-r1:8b
 
 * deepseek-r1:8b overthinks, lot of words but no facts.
 * At some point deepseek-21:8b called itself ChatGPT (was a funny one)
