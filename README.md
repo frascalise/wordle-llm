@@ -12,7 +12,7 @@ The project leverages the power of llama3, a large language model, to play Wordl
 
 ## Goal
 
-The primary goal of this project is to explore the capabilities of llama3 in a fun and engaging way. We aim to see how effectively a large language model can tackle a popular word puzzle and to identify any interesting patterns or strategies that emerge.
+The primary goal of this project is to explore the capabilities of llama3 in a fun way. I aim to see how effectively a large language model can tackle a popular word puzzle and to identify any interesting patterns or strategies that emerge.
 
 ## Findings (So Far!)
 
