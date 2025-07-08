@@ -1,4 +1,4 @@
-# llama3 Solves Wordle
+# LLMs Solves Wordle
 
 This project uses some LLMs to try and solve the Wordle of the day.
 
