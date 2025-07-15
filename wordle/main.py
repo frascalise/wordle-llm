@@ -8,7 +8,7 @@ URL = "https://wordle-api.vercel.app/api/wordle"
 # ollama API URL for LLM
 LLAMA3_URL = "http://localhost:11434/api/chat"
 
-INSTRUCTIONS = open("wordle/instructions.txt", "r").read()
+INSTRUCTIONS = open("instructions.txt", "r").read()
 WORD = ["*", "*", "*", "*", "*"]
 WRONG_WORDS = []
 WRONG_LETTERS = []
